@@ -26,10 +26,14 @@ $(document).ready(function(){
         var lemessage = JSON.parse(event.data);
         console.log(lemessage.emetteur);
         console.log(lemessage.texte);
+        let date = new Date();
+        let heure = date.getHours();
+        let minute = date.getMinutes();
+        let seconde = date.getSeconds();
 
 
 
-        $("#chat_body").append("<p>" + lemessage.emetteur + " : "+ lemessage.texte + "</p>");
+        $("#chat_body").append("<p>" + heure + ":"+ minute + ":" + seconde +" " + lemessage.emetteur + " : "+ lemessage.texte + "</p>");
     });
 
    $("#boutonEnvoyer").click(function () {
